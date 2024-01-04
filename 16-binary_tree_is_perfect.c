@@ -2,13 +2,12 @@
 
 
 /**
- * binary_tree_is_perfect - Verifies perfect binary tree structure
- *(all levels full).
+ * is_perfect_tree - Verifies perfect binary tree structure (all levels full).
  * @tree: Root node pointer.
  *
  * Return: 1 if perfect, 0 otherwise or if NULL.
  */
-int binary_tree_is_perfect(const binary_tree_t *tree)
+int is_perfect_tree(const binary_tree_t *tree)
 {
 	size_t tree_height = 0, node_count = 0, power = 0;
 
