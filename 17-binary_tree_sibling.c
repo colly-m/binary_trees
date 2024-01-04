@@ -5,15 +5,12 @@
  * @node: The node whose sibling is sought.
  * @return: Pointer to the sibling, NULL if none or invalid input.
  */
-binary_tree_t *find_sibling(binary_tree_t *node)
+void traverse_inorder(const binary_tree_t *tree, void (*func)(int))
 {
-    if (!node || !node->parent)
-        return (NULL);
+    if (!tree || !func)
+        return;
 
-    if (node == node->parent->left)
-        return (node->parent->right);
-    else if (node == node->parent->right)
-        return (node->parent->left);
-    else
-        return (NULL);
+    traverse_inorder(tree->left, func);
+    func(tree->n);
+    traverse_inorder(tree->right, func);
 }
